@@ -36,15 +36,14 @@ def threaded_client(conn, player):
                 else:
                     reply = players[1]
 
-                print("Received: ", data)
-                print("Sending : ", reply)
-
             conn.sendall(pickle.dumps(reply))
         except:
+            quit()
             break
 
     print("Lost connection")
     conn.close()
+    
 
 currentPlayer = 0
 while True:
